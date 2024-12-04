@@ -1,0 +1,15 @@
+{
+  "login": {
+    "username": "admin",
+    "password": "password123"
+  },
+  "url": {
+    "webApp": "https://animated-gingersnap-8cf7f2.netlify.app/"
+  },
+  "tags": {
+    "tag1": ["Feature", "High Priority"],
+    "tag2": ["Bug"],
+    "tag3": ["Design"],
+    "tag4": ["Feature"]
+  }
+}
