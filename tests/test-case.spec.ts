@@ -13,7 +13,7 @@ test.describe("board test cases", () => {
     boardPage = new BoardPage(page);
   });
 
-  test("test case 1", async ({ page }) => {
+  test("test case 1 verify web app implement user authentication in to do column with tags", async ({ page }) => {
     const task = page.locator(boardPage.columns).nth(0);
     const taskInToDo = task.locator("text=Implement user authentication");
     await expect(taskInToDo).toBeVisible();
@@ -28,7 +28,7 @@ test.describe("board test cases", () => {
       })
     );
   });
-  test("test case 2", async ({ page }) => {
+  test("test case 2 verify web app navigation bug in to do column with tags", async ({ page }) => {
     const task = page.locator(boardPage.columns).nth(0);
     const taskInToDo = task.locator("text=Fix navigation bug");
     await expect(taskInToDo).toBeVisible();
@@ -37,16 +37,16 @@ test.describe("board test cases", () => {
     const expectedTags = testData.tags.tag2;
     await expect(tags).toContainText(expectedTags);
   });
-  test("test case 3", async ({ page }) => {
+  test("test case 3 verify web app design system updates in progress column with tags", async ({ page }) => {
     const task = page.locator(boardPage.columns).nth(1);
-    const taskInToDo = task.locator("text=Design system updates");
-    await expect(taskInToDo).toBeVisible();
+    const taskInProgress = task.locator("text=Design system updates");
+    await expect(taskInProgress).toBeVisible();
 
     const tags = page.locator(boardPage.cardTags).nth(2);
     const expectedTags = testData.tags.tag3;
     await expect(tags).toContainText(expectedTags);
   });
-  test("test case 4", async ({ page }) => {
+  test("test case 4 verify mobile app push notification system in to do column with tags", async ({ page }) => {
     await page.locator(boardPage.mobileNav).click();
     const task = page.locator(boardPage.columns).nth(0);
     const taskInToDo = task.locator("text=Push notification system");
@@ -56,11 +56,11 @@ test.describe("board test cases", () => {
     const expectedTags = testData.tags.tag4;
     await expect(tags).toContainText(expectedTags);
   });
-  test("test case 5", async ({ page }) => {
+  test("test case 5 verify mobile app offile mode in progress column with tags", async ({ page }) => {
     await page.locator(boardPage.mobileNav).click();
     const task = page.locator(boardPage.columns).nth(1);
-    const taskInToDo = task.locator("text=Offline mode");
-    await expect(taskInToDo).toBeVisible();
+    const taskInProgress = task.locator("text=Offline mode");
+    await expect(taskInProgress).toBeVisible();
 
     const tags = page.locator(boardPage.cardTags).nth(1);
     const expectedTags = testData.tags.tag1;
@@ -72,11 +72,11 @@ test.describe("board test cases", () => {
       })
     );
   });
-  test("test case 6", async ({ page }) => {
+  test("test case 6 verify mobile app app icon design in done column with tags", async ({ page }) => {
     await page.locator(boardPage.mobileNav).click();
     const task = page.locator(boardPage.columns).nth(3);
-    const taskInToDo = task.locator("text=App icon design");
-    await expect(taskInToDo).toBeVisible();
+    const taskInDone = task.locator("text=App icon design");
+    await expect(taskInDone).toBeVisible();
 
     const tags = page.locator(boardPage.cardTags).nth(2);
     const expectedTags = testData.tags.tag3;
