@@ -1,5 +1,4 @@
 import { Page ,expect } from '@playwright/test';
-// import { test, expect } from '@playwright/test';
 
 export class BoardPage {
   readonly page: Page;
